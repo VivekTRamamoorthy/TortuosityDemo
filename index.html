@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Tortuosity</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/hamburgers.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/canvas.css">
+    
+
+<!-- JS -->
+<script defer src="js/canvas.js"></script>
+<script defer src="js/main.js"></script>
+
+    <!-- LATEX equation interpreter -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css"
+    integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js"
+    integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O"
+    crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-yACMu8JWxKzSp/C1YV86pzGiQ/l1YUfE8oPuahJQxzehAjEt2GiQuy/BIvl9KyeF" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <div class="hamburger-container">
+                <button  class="hamburger hamburger--arrow" type="button" aria-label="hamburger menu">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+            <nav>
+                <button class="nav-button" onclick="makeSectionVisible('home')">Home</button>
+                <button class="nav-button" onclick="makeSectionVisible('instruction')">Instruction</button>
+                <button class="nav-button" onclick="makeSectionVisible('theory')">Theory</button>
+            </nav>
+        </header>
+        <div class="contents">
+            <section id="home" class="">
+                <h1>Tortuosity demo</h1>
+                <div class="canvas-parent">
+                    <canvas id="canvas" width="100%" height="100%"></canvas>
+                </div>
+                
+            </section>
+            <section id="instruction" class="hidden">
+                <h1>Instructions</h1>
+                <p></p>
+            </section>
+            <section id="theory" class="hidden">
+                <h1>Theory</h1>
+                <p>
+                    Tortuosity of a path is a measure of how tortuous (deviant) the path is from a straight line. 
+                    In the context of porous materials, tortuosity corresponds to the cumulative deviation of the 
+                    fluid acoustic velocity from the bulk fluid motion given by the following expression:
+                    
+                    
+                    
+                    
+                    If the path travelled is a straight line, the tortuosity is 1. Higher the tortuosity, less straight the path is.
+                </p>
+            </section>
+            
+            
+        </div>
+        <footer>
+            &copy; MIT License  Vivek T. Ramamoorthy
+        </footer>
+        
+    </div>
+    <!-- section visibility script -->
+    <script>
+        function makeSectionVisible(sectionId){
+            document.querySelectorAll("section").forEach(section => section.classList.add("hidden"))
+            document.getElementById(sectionId).classList.remove("hidden")
+        }
+        
+    </script>
+    
+    
+    <!-- NAVBAR & HAMBURGER FUNCTIONALITY -->
+    <script async="false">
+        var header = document.querySelector("header");
+        var hamburger = document.querySelector(".hamburger");
+        var navButtons = document.querySelectorAll("nav>button");
+        
+        header.addEventListener("click", function () {
+            hamburger.classList.toggle("is-active");
+            navButtons.forEach((element) => {
+                element.classList.toggle("is-active");
+            });
+        });
+        
+    </script>
+    
+    <!-- PWA -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js");
+        }
+    </script>
+</body>
+</html>
