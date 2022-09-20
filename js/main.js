@@ -10,7 +10,7 @@ function animate(){
         c.clearRect(0,0,canvas.width,canvas.height)
         c.fillStyle = "#999";
         c.lineWidth = 3;
-        c.strokeStyle = "#000";
+        c.strokeStyle = "#fff";
         x[counter] = mouseX;
         y[counter] = mouseY;
         c.beginPath()
