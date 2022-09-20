@@ -40,6 +40,8 @@ canvas.addEventListener('mousedown', (e) => {drag = false;
     drag = true;
     mouseClickX=e.x;
     mouseClickY=e.y;
+    counter = 0;
+
 });
 canvas.addEventListener('touchstart', (e) => {
     e.preventDefault();
