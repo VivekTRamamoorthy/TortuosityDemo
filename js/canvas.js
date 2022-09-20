@@ -16,52 +16,75 @@ var mouseX=0;
 var mouseY=0;
 var drag = false;
 
+// MOVE
 canvas.addEventListener('mousemove', (event) => {
-
     let rect = canvas.getBoundingClientRect();
-
     mouseX=event.clientX-rect.left;
     mouseY=event.clientY-rect.top;
 
 });
-canvas.addEventListener('touchmove', (e) => {
-    e.preventDefault();
+canvas.addEventListener('touchmove', (event) => {
+    event.preventDefault();
     let rect = canvas.getBoundingClientRect();
-    mouseX=e.touches[0].clientX-rect.left;
-    mouseY=e.touches[0].clientY-rect.top;
+    console.log({mouseX,mouseY});
+
+    mouseX=event.touches[0].clientX-rect.left;
+    mouseY=event.touches[0].clientY-rect.top;
 });
 
-// GET MOUSE CLICK
+// CLICK START
 
 var mouseClickX = 0;
 var mouseClickY = 0;
 
-canvas.addEventListener('mousedown', (e) => {drag = false; 
-    drag = true;
-    mouseClickX=e.x;
-    mouseClickY=e.y;
-    counter = 0;
-
-});
-canvas.addEventListener('touchstart', (e) => {
-    e.preventDefault();
+canvas.addEventListener('mousedown', (event) => {drag = false; 
     drag = true;
     let rect = canvas.getBoundingClientRect();
-    mouseClickX=e.touches[0].clientX-rect.left;
-    mouseClickY=e.touches[0].clientY-rect.top;
+    mouseX=event.clientX-rect.left;
+    mouseY=event.clientY-rect.top;
+    mouseClickX=mouseX;
+    mouseClickY=mouseY;
+    onClickStart()
+
 });
-// RELEASE
-canvas.addEventListener('mouseup', (e) => {
+canvas.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    let rect = canvas.getBoundingClientRect();
+    mouseX=event.touches[0].clientX-rect.left;
+    mouseY=event.touches[0].clientY-rect.top;
+    drag = true;
+    mouseClickX = mouseX;
+    mouseClickY = mouseY;
+    onClickStart()
+
+});
+// CLICK RELEASE
+canvas.addEventListener('mouseup', (event) => {
     drag=false;
-    mouseDropX=e.x;
-    mouseDropY=e.y;
+    let rect = canvas.getBoundingClientRect();
+    mouseX=event.clientX-rect.left;
+    mouseY=event.clientY-rect.top;
+    mouseDropX=mouseX;
+    mouseDropY=mouseY;
+    onClickEnd()
+
 });
-canvas.addEventListener('touchend', (e) => {
-    e.preventDefault();
+canvas.addEventListener('touchend', (event) => {
+    event.preventDefault();
     mouseDropX=mouseX;
     mouseDropY=mouseY;
     drag=false;
+    onClickEnd()
+
 });
+
+// HANDLER FUNCTIONS
+
+var onClickStart = function(){
+    counter = 0;
+}
+var onClickEnd = function(){
+}
 
 
 
