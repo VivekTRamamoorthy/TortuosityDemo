@@ -43,14 +43,14 @@
             </div>
             <nav>
                 <button class="nav-button" onclick="makeSectionVisible('home')">Home</button>
-                <button class="nav-button" onclick="makeSectionVisible('instruction')">Instruction</button>
+                <!-- <button class="nav-button" onclick="makeSectionVisible('instruction')">Instruction</button> -->
                 <button class="nav-button" onclick="makeSectionVisible('theory')">Theory</button>
             </nav>
         </header>
         <div class="contents">
             <section id="home" class="">
                 <h1>Tortuosity of a path</h1>
-                <div id="tortuosity-display">Tortuosity = -</div>
+                <div id="tortuosity-display">Draw a path below to compute its tortuosity</div>
                 <div class="canvas-parent">
                     <canvas id="canvas" width="100%" height="100%"></canvas>
                 </div>
@@ -63,14 +63,26 @@
             <section id="theory" class="hidden">
                 <h1>Theory</h1>
                 <p>
-                    Tortuosity of a path is a measure of how tortuous (deviant) the path is from a straight line. 
+                    Tortuosity of a path is a measure of how deviant the path is from a straight line. 
+                    </p>
+                    <p>
                     In the context of porous materials, tortuosity corresponds to the cumulative deviation of the 
-                    fluid acoustic velocity from the bulk fluid motion given by the following expression:
+                        fluid acoustic velocity from the bulk fluid motion given by the following expression:
+                        \[ 	\alpha_{\infty} = 
+                        \frac{\displaystyle{\frac{1}{V}\int_{V}v^{2}dV}}
+                        {\left( \displaystyle{\frac{1}{V}\int_{V}\vec{v}dV} \right)^{2}} \] 
+                    </p>
+
                     
-                    
-                    
-                    
-                    If the path travelled is a straight line, the tortuosity is 1. Higher the tortuosity, less straight the path is.
+                    <p>
+                        If the path travelled is a straight line, the tortuosity is 1. 
+                        
+                        
+                        
+                </p>
+                <p>
+                    Higher the tortuosity, less straight the path is.
+
                 </p>
             </section>
             

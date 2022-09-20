@@ -10,11 +10,13 @@ function animate(){
     if(drag){
         c.clearRect(0,0,canvas.width,canvas.height)
         c.fillStyle = "#999";
-        c.fillRect(0,0,canvas.width*.2,canvas.height)
-        c.fillRect(0.8*canvas.width,0,canvas.width*.2,canvas.height)
+        // c.fillRect(0,0,canvas.width*.2,canvas.height)
+        // c.fillRect(0.8*canvas.width,0,canvas.width*.2,canvas.height)
         let r = 10;
         // console.log({mouseX,mouseY});
         c.fillStyle = "#000"
+        c.lineWidth = 3;
+
         // PRINT MOUSE POSITION
         // c.fillRect(mouseX-r,mouseY-r,2*r,2*r)
         c.strokeStyle = "#000";

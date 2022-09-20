@@ -65,3 +65,9 @@ footer {
 .hidden {
   display: none !important;
 }
+#tortuosity-display{
+  text-align: center;
+  display:block;
+  font-size: large;
+  color: darkblue;
+}
