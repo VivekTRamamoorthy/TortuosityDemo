@@ -13,7 +13,7 @@ fluid acoustic velocity from the bulk fluid motion given by the following expres
 
 $$ \alpha_{\infty} = \frac{\displaystyle{\frac{1}{V}\int_{V}v^{2}dV}} {\left( \displaystyle{\frac{1}{V}\int_{V}\vec{v}dV} \right)^{2}} $$
 
-Here, $v$ is the velocity of the fluid particle, and $V$ is the volume.
+Here, $v$ is the velocity of the fluid particle assuming the fluid is inviscid, and $V$ is the volume.
 This demo is complementary to the [JCAL](https://apmr.matelys.com/PropagationModels/MotionlessSkeleton/JohnsonChampouxAllardLafargeModel.html) and
               [Tortuosity](https://apmr.matelys.com/Parameters/HFLimitOfTortuosity.html) webpages at apmr.matelys.com.
 
